@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F45433EB5C4230E85F77933 /* libPods-TwoLevelLinkage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58571578893A6A0270544ABE /* libPods-TwoLevelLinkage.a */; };
+		8728AE102009E59800B7ABCA /* CellDataAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8728AE0C2009E59700B7ABCA /* CellDataAdapter.m */; };
+		8728AE112009E59800B7ABCA /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8728AE0F2009E59700B7ABCA /* CustomCell.m */; };
+		8728AE142009E6B000B7ABCA /* TwoLevelLinkageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8728AE132009E6B000B7ABCA /* TwoLevelLinkageCell.m */; };
+		8728AE172009E70000B7ABCA /* LeftLevelLinkageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8728AE162009E70000B7ABCA /* LeftLevelLinkageModel.m */; };
+		8728AE1A2009E70D00B7ABCA /* RightLevelLinkageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8728AE192009E70D00B7ABCA /* RightLevelLinkageModel.m */; };
+		8728AE1D200C98DF00B7ABCA /* CellHeaderFooterDataAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8728AE1C200C98DF00B7ABCA /* CellHeaderFooterDataAdapter.m */; };
+		8728AE20200EECE100B7ABCA /* CustomHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8728AE1F200EECE100B7ABCA /* CustomHeaderFooterView.m */; };
 		8745D5B12007287100090417 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8745D5B02007287100090417 /* AppDelegate.m */; };
 		8745D5B42007287100090417 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8745D5B32007287100090417 /* ViewController.m */; };
 		8745D5B72007287100090417 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8745D5B52007287100090417 /* Main.storyboard */; };
@@ -15,6 +23,16 @@
 		8745D5BF2007287100090417 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8745D5BE2007287100090417 /* main.m */; };
 		8745D5C92007287100090417 /* TwoLevelLinkageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8745D5C82007287100090417 /* TwoLevelLinkageTests.m */; };
 		8745D5D42007287100090417 /* TwoLevelLinkageUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8745D5D32007287100090417 /* TwoLevelLinkageUITests.m */; };
+		8745D5E3200728E100090417 /* TwoLevelLinkageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8745D5E2200728E100090417 /* TwoLevelLinkageViewController.m */; };
+		8745D5E820072A7500090417 /* TwoLevelLinkageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8745D5E720072A7500090417 /* TwoLevelLinkageView.m */; };
+		876A3EF2200FA3F200864FBD /* liwushuo.json in Resources */ = {isa = PBXBuildFile; fileRef = 876A3EF1200FA3F200864FBD /* liwushuo.json */; };
+		876A3EF8200FA57900864FBD /* ItemManagerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 876A3EF7200FA57900864FBD /* ItemManagerModel.m */; };
+		876A3EFB200FA58E00864FBD /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 876A3EFA200FA58E00864FBD /* CategoryModel.m */; };
+		876A3EFE200FA5A100864FBD /* SubCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 876A3EFD200FA5A100864FBD /* SubCategoryModel.m */; };
+		876A3F01200FA69500864FBD /* ShopDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 876A3F00200FA69500864FBD /* ShopDataModel.m */; };
+		876A3F042010ED1A00864FBD /* LeftSideLinkageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 876A3F032010ED1A00864FBD /* LeftSideLinkageCell.m */; };
+		876A3F072010ED2700864FBD /* RightSideLinkageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 876A3F062010ED2700864FBD /* RightSideLinkageCell.m */; };
+		876A3F0A201108DD00864FBD /* RightSideLinkageHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 876A3F09201108DD00864FBD /* RightSideLinkageHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +53,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42AFB65F03C3E096AEE401B9 /* Pods-TwoLevelLinkage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwoLevelLinkage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwoLevelLinkage/Pods-TwoLevelLinkage.debug.xcconfig"; sourceTree = "<group>"; };
+		58571578893A6A0270544ABE /* libPods-TwoLevelLinkage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TwoLevelLinkage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A7572E51780CC67549FE7AA /* Pods-TwoLevelLinkage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwoLevelLinkage.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwoLevelLinkage/Pods-TwoLevelLinkage.release.xcconfig"; sourceTree = "<group>"; };
+		8728AE0C2009E59700B7ABCA /* CellDataAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellDataAdapter.m; sourceTree = "<group>"; };
+		8728AE0D2009E59700B7ABCA /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		8728AE0E2009E59700B7ABCA /* CellDataAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellDataAdapter.h; sourceTree = "<group>"; };
+		8728AE0F2009E59700B7ABCA /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		8728AE122009E6B000B7ABCA /* TwoLevelLinkageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoLevelLinkageCell.h; sourceTree = "<group>"; };
+		8728AE132009E6B000B7ABCA /* TwoLevelLinkageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoLevelLinkageCell.m; sourceTree = "<group>"; };
+		8728AE152009E70000B7ABCA /* LeftLevelLinkageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftLevelLinkageModel.h; sourceTree = "<group>"; };
+		8728AE162009E70000B7ABCA /* LeftLevelLinkageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftLevelLinkageModel.m; sourceTree = "<group>"; };
+		8728AE182009E70D00B7ABCA /* RightLevelLinkageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RightLevelLinkageModel.h; sourceTree = "<group>"; };
+		8728AE192009E70D00B7ABCA /* RightLevelLinkageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RightLevelLinkageModel.m; sourceTree = "<group>"; };
+		8728AE1B200C98DF00B7ABCA /* CellHeaderFooterDataAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellHeaderFooterDataAdapter.h; sourceTree = "<group>"; };
+		8728AE1C200C98DF00B7ABCA /* CellHeaderFooterDataAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellHeaderFooterDataAdapter.m; sourceTree = "<group>"; };
+		8728AE1E200EECE100B7ABCA /* CustomHeaderFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomHeaderFooterView.h; sourceTree = "<group>"; };
+		8728AE1F200EECE100B7ABCA /* CustomHeaderFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomHeaderFooterView.m; sourceTree = "<group>"; };
 		8745D5AC2007287100090417 /* TwoLevelLinkage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwoLevelLinkage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8745D5AF2007287100090417 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8745D5B02007287100090417 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +86,25 @@
 		8745D5CF2007287100090417 /* TwoLevelLinkageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwoLevelLinkageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8745D5D32007287100090417 /* TwoLevelLinkageUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoLevelLinkageUITests.m; sourceTree = "<group>"; };
 		8745D5D52007287100090417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8745D5E1200728E100090417 /* TwoLevelLinkageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoLevelLinkageViewController.h; sourceTree = "<group>"; };
+		8745D5E2200728E100090417 /* TwoLevelLinkageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoLevelLinkageViewController.m; sourceTree = "<group>"; };
+		8745D5E620072A7500090417 /* TwoLevelLinkageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoLevelLinkageView.h; sourceTree = "<group>"; };
+		8745D5E720072A7500090417 /* TwoLevelLinkageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoLevelLinkageView.m; sourceTree = "<group>"; };
+		876A3EF1200FA3F200864FBD /* liwushuo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = liwushuo.json; sourceTree = "<group>"; };
+		876A3EF6200FA57900864FBD /* ItemManagerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemManagerModel.h; sourceTree = "<group>"; };
+		876A3EF7200FA57900864FBD /* ItemManagerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemManagerModel.m; sourceTree = "<group>"; };
+		876A3EF9200FA58E00864FBD /* CategoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
+		876A3EFA200FA58E00864FBD /* CategoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
+		876A3EFC200FA5A100864FBD /* SubCategoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubCategoryModel.h; sourceTree = "<group>"; };
+		876A3EFD200FA5A100864FBD /* SubCategoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubCategoryModel.m; sourceTree = "<group>"; };
+		876A3EFF200FA69500864FBD /* ShopDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopDataModel.h; sourceTree = "<group>"; };
+		876A3F00200FA69500864FBD /* ShopDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopDataModel.m; sourceTree = "<group>"; };
+		876A3F022010ED1A00864FBD /* LeftSideLinkageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftSideLinkageCell.h; sourceTree = "<group>"; };
+		876A3F032010ED1A00864FBD /* LeftSideLinkageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftSideLinkageCell.m; sourceTree = "<group>"; };
+		876A3F052010ED2700864FBD /* RightSideLinkageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RightSideLinkageCell.h; sourceTree = "<group>"; };
+		876A3F062010ED2700864FBD /* RightSideLinkageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RightSideLinkageCell.m; sourceTree = "<group>"; };
+		876A3F08201108DD00864FBD /* RightSideLinkageHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RightSideLinkageHeaderView.h; sourceTree = "<group>"; };
+		876A3F09201108DD00864FBD /* RightSideLinkageHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RightSideLinkageHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F45433EB5C4230E85F77933 /* libPods-TwoLevelLinkage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +140,8 @@
 				8745D5C72007287100090417 /* TwoLevelLinkageTests */,
 				8745D5D22007287100090417 /* TwoLevelLinkageUITests */,
 				8745D5AD2007287100090417 /* Products */,
+				F114BA27587FC2306F792310 /* Pods */,
+				D5A3E702263F7BF683F11476 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +162,16 @@
 				8745D5B02007287100090417 /* AppDelegate.m */,
 				8745D5B22007287100090417 /* ViewController.h */,
 				8745D5B32007287100090417 /* ViewController.m */,
+				8728AE0E2009E59700B7ABCA /* CellDataAdapter.h */,
+				8728AE0C2009E59700B7ABCA /* CellDataAdapter.m */,
+				8728AE0D2009E59700B7ABCA /* CustomCell.h */,
+				8728AE0F2009E59700B7ABCA /* CustomCell.m */,
+				8728AE1B200C98DF00B7ABCA /* CellHeaderFooterDataAdapter.h */,
+				8728AE1C200C98DF00B7ABCA /* CellHeaderFooterDataAdapter.m */,
+				8728AE1E200EECE100B7ABCA /* CustomHeaderFooterView.h */,
+				8728AE1F200EECE100B7ABCA /* CustomHeaderFooterView.m */,
+				8745D5E920072B9300090417 /* TwoLevelLinkageView */,
+				8745D5E520072A3500090417 /* TwoLevelLinkage */,
 				8745D5B52007287100090417 /* Main.storyboard */,
 				8745D5B82007287100090417 /* Assets.xcassets */,
 				8745D5BA2007287100090417 /* LaunchScreen.storyboard */,
@@ -132,6 +199,70 @@
 			path = TwoLevelLinkageUITests;
 			sourceTree = "<group>";
 		};
+		8745D5E520072A3500090417 /* TwoLevelLinkage */ = {
+			isa = PBXGroup;
+			children = (
+				8745D5E1200728E100090417 /* TwoLevelLinkageViewController.h */,
+				8745D5E2200728E100090417 /* TwoLevelLinkageViewController.m */,
+				876A3F022010ED1A00864FBD /* LeftSideLinkageCell.h */,
+				876A3F032010ED1A00864FBD /* LeftSideLinkageCell.m */,
+				876A3F052010ED2700864FBD /* RightSideLinkageCell.h */,
+				876A3F062010ED2700864FBD /* RightSideLinkageCell.m */,
+				876A3F08201108DD00864FBD /* RightSideLinkageHeaderView.h */,
+				876A3F09201108DD00864FBD /* RightSideLinkageHeaderView.m */,
+				876A3EF0200FA3A000864FBD /* Models */,
+			);
+			path = TwoLevelLinkage;
+			sourceTree = "<group>";
+		};
+		8745D5E920072B9300090417 /* TwoLevelLinkageView */ = {
+			isa = PBXGroup;
+			children = (
+				8745D5E620072A7500090417 /* TwoLevelLinkageView.h */,
+				8745D5E720072A7500090417 /* TwoLevelLinkageView.m */,
+				8728AE122009E6B000B7ABCA /* TwoLevelLinkageCell.h */,
+				8728AE132009E6B000B7ABCA /* TwoLevelLinkageCell.m */,
+				8728AE152009E70000B7ABCA /* LeftLevelLinkageModel.h */,
+				8728AE162009E70000B7ABCA /* LeftLevelLinkageModel.m */,
+				8728AE182009E70D00B7ABCA /* RightLevelLinkageModel.h */,
+				8728AE192009E70D00B7ABCA /* RightLevelLinkageModel.m */,
+			);
+			path = TwoLevelLinkageView;
+			sourceTree = "<group>";
+		};
+		876A3EF0200FA3A000864FBD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				876A3EF1200FA3F200864FBD /* liwushuo.json */,
+				876A3EF6200FA57900864FBD /* ItemManagerModel.h */,
+				876A3EF7200FA57900864FBD /* ItemManagerModel.m */,
+				876A3EFF200FA69500864FBD /* ShopDataModel.h */,
+				876A3F00200FA69500864FBD /* ShopDataModel.m */,
+				876A3EF9200FA58E00864FBD /* CategoryModel.h */,
+				876A3EFA200FA58E00864FBD /* CategoryModel.m */,
+				876A3EFC200FA5A100864FBD /* SubCategoryModel.h */,
+				876A3EFD200FA5A100864FBD /* SubCategoryModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D5A3E702263F7BF683F11476 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58571578893A6A0270544ABE /* libPods-TwoLevelLinkage.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F114BA27587FC2306F792310 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				42AFB65F03C3E096AEE401B9 /* Pods-TwoLevelLinkage.debug.xcconfig */,
+				5A7572E51780CC67549FE7AA /* Pods-TwoLevelLinkage.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +270,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8745D5D82007287100090417 /* Build configuration list for PBXNativeTarget "TwoLevelLinkage" */;
 			buildPhases = (
+				DC969A1089EBF3782C41709C /* [CP] Check Pods Manifest.lock */,
 				8745D5A82007287100090417 /* Sources */,
 				8745D5A92007287100090417 /* Frameworks */,
 				8745D5AA2007287100090417 /* Resources */,
+				1A9C518C146EA73B85AB9769 /* [CP] Embed Pods Frameworks */,
+				4A018DA705B968DC87AE4275 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -239,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8745D5BC2007287100090417 /* LaunchScreen.storyboard in Resources */,
+				876A3EF2200FA3F200864FBD /* liwushuo.json in Resources */,
 				8745D5B92007287100090417 /* Assets.xcassets in Resources */,
 				8745D5B72007287100090417 /* Main.storyboard in Resources */,
 			);
@@ -260,14 +395,78 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1A9C518C146EA73B85AB9769 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TwoLevelLinkage/Pods-TwoLevelLinkage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A018DA705B968DC87AE4275 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TwoLevelLinkage/Pods-TwoLevelLinkage-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC969A1089EBF3782C41709C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8745D5A82007287100090417 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8728AE1D200C98DF00B7ABCA /* CellHeaderFooterDataAdapter.m in Sources */,
+				876A3EFB200FA58E00864FBD /* CategoryModel.m in Sources */,
+				8745D5E820072A7500090417 /* TwoLevelLinkageView.m in Sources */,
 				8745D5B42007287100090417 /* ViewController.m in Sources */,
+				876A3F0A201108DD00864FBD /* RightSideLinkageHeaderView.m in Sources */,
+				876A3F042010ED1A00864FBD /* LeftSideLinkageCell.m in Sources */,
+				8728AE102009E59800B7ABCA /* CellDataAdapter.m in Sources */,
 				8745D5BF2007287100090417 /* main.m in Sources */,
+				8728AE112009E59800B7ABCA /* CustomCell.m in Sources */,
+				8728AE1A2009E70D00B7ABCA /* RightLevelLinkageModel.m in Sources */,
+				8728AE142009E6B000B7ABCA /* TwoLevelLinkageCell.m in Sources */,
+				8728AE172009E70000B7ABCA /* LeftLevelLinkageModel.m in Sources */,
+				8728AE20200EECE100B7ABCA /* CustomHeaderFooterView.m in Sources */,
+				876A3EF8200FA57900864FBD /* ItemManagerModel.m in Sources */,
+				8745D5E3200728E100090417 /* TwoLevelLinkageViewController.m in Sources */,
+				876A3EFE200FA5A100864FBD /* SubCategoryModel.m in Sources */,
 				8745D5B12007287100090417 /* AppDelegate.m in Sources */,
+				876A3F01200FA69500864FBD /* ShopDataModel.m in Sources */,
+				876A3F072010ED2700864FBD /* RightSideLinkageCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +627,7 @@
 		};
 		8745D5D92007287100090417 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42AFB65F03C3E096AEE401B9 /* Pods-TwoLevelLinkage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -442,6 +642,7 @@
 		};
 		8745D5DA2007287100090417 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A7572E51780CC67549FE7AA /* Pods-TwoLevelLinkage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

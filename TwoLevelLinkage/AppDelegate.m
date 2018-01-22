@@ -7,7 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "TwoLevelLinkageViewController.h"
 
+/**
+ 级联菜单
+ */
 @interface AppDelegate ()
 
 @end
@@ -16,7 +20,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    TwoLevelLinkageViewController *viewController = [[TwoLevelLinkageViewController alloc] init];
+    UINavigationController *navViewController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    
+    self.window.rootViewController = navViewController;
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
