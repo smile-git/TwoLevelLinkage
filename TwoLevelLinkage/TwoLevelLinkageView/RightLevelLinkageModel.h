@@ -7,10 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@class CellDataAdapter;
-
-
+@class  CellDataAdapter;
 /**
  级联中右tableView‘s cell使用model
  */

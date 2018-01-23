@@ -8,30 +8,25 @@
 
 #import <Foundation/Foundation.h>
 #import "RightLevelLinkageModel.h"
+#import "CellHeaderFooterDataAdapter.h"
 #import "CellDataAdapter.h"
-
-@class CellHeaderFooterDataAdapter;
-
 
 /**
  级联中左tableView‘s cell使用model
  */
 @interface LeftLevelLinkageModel : NSObject
 
-
 /**
  cell数据适配器
  */
-@property (nonatomic, strong) CellDataAdapter *adapter;
-
+@property (nonatomic, strong)  CellDataAdapter *adapter;
 
 /**
  cellHeader数据适配器，属于右tableView
  
  * 左tableView的cell.row与右tableView的section对等
  */
-@property (nonatomic, assign) CellHeaderFooterDataAdapter *headerAdapter;
-
+@property (nonatomic, strong) CellHeaderFooterDataAdapter *headerAdapter;
 
 /**
  是否选中状态

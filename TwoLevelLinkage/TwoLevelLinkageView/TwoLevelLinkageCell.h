@@ -7,7 +7,7 @@
 //
 
 #import "CustomCell.h"
-
+@class TwoLevelLinkageModel;
 
 /**
  级联两个tableView的cell的父cell，分左右两cell
@@ -18,8 +18,7 @@
 /**
  级联model，如果是左边tableView，则为LeftLevelLinkageModel，如果是右边tableView，则为RightLevelLinkageModel
  */
-@property (nonatomic, strong) id levelModel;
-
+@property (nonatomic, strong) TwoLevelLinkageModel *levelModel;
 
 
 /**
