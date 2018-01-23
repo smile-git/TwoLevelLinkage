@@ -8,12 +8,14 @@
 
 #import "TwoLevelLinkageView.h"
 #import "TwoLevelLinkageCell.h"
+#import "CustomHeaderFooterView.h"
 
 
 @interface TwoLevelLinkageView ()<UITableViewDelegate, UITableViewDataSource> {
     
     UITableView *_leftSideTableView;
     UITableView *_rightSideTableView;
+    UIView      *_leftLineView;
 }
 
 @property (nonatomic, assign) CGFloat leftSideWidth;
@@ -55,6 +57,10 @@
     _rightSideTableView.separatorStyle                = UITableViewCellSeparatorStyleNone;
     
     [self addSubview:_rightSideTableView];
+    
+    _leftLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1.5, 100)];
+    _leftLineView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.8];
+    [self addSubview:_leftLineView];
 }
 
 - (void)registCellWithLeftTableView:(void (^)(UITableView *leftSideTableView))leftSideTableViewBlock cellAndHeaderWithRightTableView:(void (^)(UITableView *rightSideTableView))rightSideTableViewBlock {
@@ -99,6 +105,18 @@
     }
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    if ([tableView isEqual:_rightSideTableView]) {
+        
+        return self.leftModels.count;
+        
+    } else {
+        
+        return 1;
+    }
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     CellDataAdapter *adapter = [self adapterWithTableView:tableView indexPath:indexPath];
@@ -114,9 +132,45 @@
     return cell;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    if ([tableView isEqual:_rightSideTableView]) {
+        
+        CellHeaderFooterDataAdapter *adapter = self.leftModels[section].headerAdapter;
+        CustomHeaderFooterView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:adapter.reusedIdentifier];
+        
+        headerView.adapter = adapter;
+        headerView.data = adapter.data;
+        headerView.section = section;
+        
+        [headerView loadContent];
+        
+        return headerView;
+    
+    } else {
+        
+        return nil;
+    }
+        
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return [self adapterWithTableView:tableView indexPath:indexPath].cellHeight;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    
+    if ([tableView isEqual:_rightSideTableView]) {
+        LeftLevelLinkageModel *leftModel = self.leftModels[section];
+        CellHeaderFooterDataAdapter *adapter = leftModel.headerAdapter;
+        CGFloat height = adapter.height;
+        return height;
+        
+    } else {
+        
+        return 0;
+    }
 }
 
 #pragma mark - ---- Whtiin The Method ----

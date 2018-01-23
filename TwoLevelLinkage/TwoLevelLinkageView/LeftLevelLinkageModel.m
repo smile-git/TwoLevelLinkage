@@ -7,7 +7,6 @@
 //
 
 #import "LeftLevelLinkageModel.h"
-#import "CellHeaderFooterDataAdapter.h"
 
 @implementation LeftLevelLinkageModel
 

@@ -36,9 +36,17 @@
     self.linkageView = [[TwoLevelLinkageView alloc] initWithFrame:self.view.bounds leftSideWidth:leftSideWidth];
     
     // ----- 注册两个tableView的cell和header
-    [_linkageView registCellWithTableViews:^(UITableView *leftSideTableView, UITableView *rightSideTableView) {
+//    [_linkageView registCellWithTableViews:^(UITableView *leftSideTableView, UITableView *rightSideTableView) {
+//
+//
+//
+//    }];
+    
+    [_linkageView registCellWithLeftTableView:^(UITableView *leftSideTableView) {
         
         [leftSideTableView registerClass:[LeftSideLinkageCell class] forCellReuseIdentifier:@"LeftSideLinkageCell"];
+
+    } cellAndHeaderWithRightTableView:^(UITableView *rightSideTableView) {
         
         [rightSideTableView registerClass:[RightSideLinkageCell class] forCellReuseIdentifier:@"RightSideLinkageCell"];
         [rightSideTableView registerClass:[RightSideLinkageHeaderView class] forHeaderFooterViewReuseIdentifier:@"RightSideLinkageHeaderView"];
@@ -74,9 +82,11 @@
         
         // ----- 创建联动左侧的model.
         LeftLevelLinkageModel *leftModel = [[LeftLevelLinkageModel alloc] init];
-        leftModel.adapter = [LeftSideLinkageCell fixedHeightTypeDataAdapterWithData:categoryModel];
         // ----- 右侧model跟左侧model关联
         leftModel.subModels = rightModels;
+        
+        leftModel.adapter = [LeftSideLinkageCell fixedHeightTypeDataAdapterWithData:categoryModel];
+        
         // ----- 右侧每个section都跟左侧的cell相关联
         leftModel.headerAdapter = [RightSideLinkageHeaderView fixedHeightTypeDataAdapterWithData:categoryModel];
         

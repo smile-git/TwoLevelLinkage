@@ -14,6 +14,13 @@
 
 @property (nonatomic, strong) NSArray <LeftLevelLinkageModel *>*leftModels;
 
+/**
+ init method
+
+ @param frame frame
+ @param leftSideWidth leftTableView's width
+ @return TwoLevelLinkageView
+ */
 - (instancetype)initWithFrame:(CGRect)frame leftSideWidth:(CGFloat)leftSideWidth;
 
 

@@ -8,6 +8,8 @@
 
 #import "LeftSideLinkageCell.h"
 
+
+
 @implementation LeftSideLinkageCell
 
 - (void)setupCell {
