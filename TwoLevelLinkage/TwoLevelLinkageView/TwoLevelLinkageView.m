@@ -15,7 +15,6 @@
     
     UITableView *_leftSideTableView;
     UITableView *_rightSideTableView;
-    UIView      *_leftLineView;
 }
 
 @property (nonatomic, assign) CGFloat leftSideWidth;
@@ -66,9 +65,6 @@
 
     [self addSubview:_rightSideTableView];
     
-    _leftLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1.5, 100)];
-    _leftLineView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.8];
-    [self addSubview:_leftLineView];
 }
 
 #pragma mark - public method
@@ -183,6 +179,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     
     if ([tableView isEqual:_rightSideTableView]) {
+        
         LeftLevelLinkageModel *leftModel = self.leftModels[section];
         CellHeaderFooterDataAdapter *adapter = leftModel.headerAdapter;
         CGFloat height = adapter.height;
@@ -210,16 +207,28 @@
                                    atScrollPosition:UITableViewScrollPositionTop
                                            animated:YES];
         
+        // ----- 触发代理方法
+        if ([self.delegate respondsToSelector:@selector(twoLevelLinkageView:selectedLeftSideTableViewItemRow:item:)]) {
+            
+            [self.delegate twoLevelLinkageView:self selectedLeftSideTableViewItemRow:indexPath.row item:self.leftModels[newSelectIndex].adapter.data];
+        }
+        
+        // ----- 点击左侧cell状态
         self.isSelectedLeft = YES;
+        
     } else {
         
-        
+        if ([self.delegate respondsToSelector:@selector(twoLevelLinkageView:selectedRightSideTableViewItemIndexPath:item:)]) {
+            
+            [self.delegate twoLevelLinkageView:self selectedRightSideTableViewItemIndexPath:indexPath item:self.leftModels[indexPath.section].subModels[indexPath.row].adapter.data];
+        }
     }
 }
 
 #pragma mark - ScrollView Delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
+    // ----- 手动滑动右侧tableView条件下
     if ([scrollView isEqual:_rightSideTableView] && _isSelectedLeft == NO) {
         
         NSIndexPath *indexPath = [_rightSideTableView indexPathForCell:_rightSideTableView.visibleCells.firstObject];
@@ -228,6 +237,7 @@
         if (_leftTableViewCurrentSelectedCellIndex != section) {
 
             NSInteger newLeftSelectIndex = section;
+            
             [self updateSelectedIndexValueWithOldIndex:_leftTableViewCurrentSelectedCellIndex newIndex:newLeftSelectIndex];
 
             [_leftSideTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:section inSection:0]
@@ -238,8 +248,9 @@
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-    
+    // ----- 非手动条件下滑动停止，更改状态
     self.isSelectedLeft = NO;
+    
 }
 
 
