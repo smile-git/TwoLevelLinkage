@@ -13,6 +13,13 @@
 #import "RightSideLinkageCell.h"
 #import "RightSideLinkageHeaderView.h"
 
+// 屏幕长宽
+#define WIDTH   [UIScreen mainScreen].bounds.size.width
+#define HEIGHT  [UIScreen mainScreen].bounds.size.height
+
+#define  iPhoneX        (WIDTH == 375.f && HEIGHT == 812.f ? YES : NO)
+#define NavHeight       (iPhoneX ? 88 : 64)
+
 @interface TwoLevelLinkageViewController ()
 
 @property (nonatomic, strong) TwoLevelLinkageView *linkageView;
@@ -33,21 +40,13 @@
     
     CGFloat leftSideWidth = 100.f;
     
-    self.linkageView = [[TwoLevelLinkageView alloc] initWithFrame:self.view.bounds leftSideWidth:leftSideWidth];
+    self.linkageView = [[TwoLevelLinkageView alloc] initWithFrame:CGRectMake(0, NavHeight, WIDTH, HEIGHT - NavHeight) leftSideWidth:leftSideWidth];
     
-    // ----- 注册两个tableView的cell和header
-//    [_linkageView registCellWithTableViews:^(UITableView *leftSideTableView, UITableView *rightSideTableView) {
-//
-//
-//
-//    }];
-    
-    [_linkageView registCellWithLeftTableView:^(UITableView *leftSideTableView) {
-        
+    //----- 注册两个tableView的cell和header
+    [_linkageView registCellWithTableViews:^(UITableView *leftSideTableView, UITableView *rightSideTableView) {
+
         [leftSideTableView registerClass:[LeftSideLinkageCell class] forCellReuseIdentifier:@"LeftSideLinkageCell"];
 
-    } cellAndHeaderWithRightTableView:^(UITableView *rightSideTableView) {
-        
         [rightSideTableView registerClass:[RightSideLinkageCell class] forCellReuseIdentifier:@"RightSideLinkageCell"];
         [rightSideTableView registerClass:[RightSideLinkageHeaderView class] forHeaderFooterViewReuseIdentifier:@"RightSideLinkageHeaderView"];
     }];
@@ -93,8 +92,10 @@
         [leftModels addObject:leftModel];
     }];
     
+    leftModels.firstObject.selected = YES;
     _linkageView.leftModels = leftModels;
     
     [_linkageView reloadData];
+    [_linkageView leftTableViewCellMakeSelectedAtRow:0];
 }
 @end

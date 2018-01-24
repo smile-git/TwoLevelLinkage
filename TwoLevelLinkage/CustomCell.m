@@ -20,6 +20,8 @@
     
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+
         [self setupCell];
         [self buildSubview];
     }
