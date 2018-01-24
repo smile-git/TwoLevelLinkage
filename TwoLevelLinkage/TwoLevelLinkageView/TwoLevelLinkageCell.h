@@ -38,6 +38,12 @@
 - (void)updateToNormalStateAnimated:(BOOL)animated;
 
 
+/**
+ 更新选中状态
+
+ @param state select‘state
+ @param animated is animated
+ */
 - (void)updateSelectedState:(BOOL)state animate:(BOOL)animated;
 
 @end
