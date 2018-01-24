@@ -8,10 +8,26 @@
 
 #import <UIKit/UIKit.h>
 #import "LeftLevelLinkageModel.h"
+@class TwoLevelLinkageView;
 
+@protocol TwoLevelLinkageViewDelegate<NSObject>
+
+- (void)twoLevelLinkageView:(TwoLevelLinkageView *)linkageView selectedLeftSideTableViewItemRow:(NSInteger)row item:(id)data;
+- (void)twoLevelLinkageView:(TwoLevelLinkageView *)linkageView selectedRightSideTableViewItemIndexPath:(NSIndexPath *)indexPath item:(id)data;
+
+@end
+
+/**
+ 注册cell和header的block
+
+ @param leftSideTableView 左侧tableView
+ @param rightSideTableView 右侧tableView
+ */
 typedef void(^RegistCellWithTableViewBlock)(UITableView *leftSideTableView, UITableView *rightSideTableView);
 
 @interface TwoLevelLinkageView : UIView
+
+@property (nonatomic, weak) id<TwoLevelLinkageViewDelegate> delegate;
 
 @property (nonatomic, strong) NSArray <LeftLevelLinkageModel *>*leftModels;
 
