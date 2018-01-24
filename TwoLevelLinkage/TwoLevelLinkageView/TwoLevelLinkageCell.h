@@ -7,7 +7,7 @@
 //
 
 #import "CustomCell.h"
-@class TwoLevelLinkageModel;
+#import "LeftLevelLinkageModel.h"
 
 /**
  级联两个tableView的cell的父cell，分左右两cell
@@ -18,7 +18,7 @@
 /**
  级联model，如果是左边tableView，则为LeftLevelLinkageModel，如果是右边tableView，则为RightLevelLinkageModel
  */
-@property (nonatomic, strong) TwoLevelLinkageModel *levelModel;
+@property (nonatomic, strong) LeftLevelLinkageModel *levelModel;
 
 
 /**
@@ -36,5 +36,8 @@
  @param animated is animated
  */
 - (void)updateToNormalStateAnimated:(BOOL)animated;
+
+
+- (void)updateSelectedState:(BOOL)state animate:(BOOL)animated;
 
 @end

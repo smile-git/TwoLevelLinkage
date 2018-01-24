@@ -21,4 +21,9 @@
     
 }
 
+- (void)updateSelectedState:(BOOL)state animate:(BOOL)animated{
+    
+    
+}
+
 @end

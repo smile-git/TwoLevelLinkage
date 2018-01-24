@@ -33,7 +33,6 @@
 		876A3F042010ED1A00864FBD /* LeftSideLinkageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 876A3F032010ED1A00864FBD /* LeftSideLinkageCell.m */; };
 		876A3F072010ED2700864FBD /* RightSideLinkageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 876A3F062010ED2700864FBD /* RightSideLinkageCell.m */; };
 		876A3F0A201108DD00864FBD /* RightSideLinkageHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 876A3F09201108DD00864FBD /* RightSideLinkageHeaderView.m */; };
-		87D014E320171E66003F2967 /* UIFont+Fonts.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D014E220171E66003F2967 /* UIFont+Fonts.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,8 +105,6 @@
 		876A3F062010ED2700864FBD /* RightSideLinkageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RightSideLinkageCell.m; sourceTree = "<group>"; };
 		876A3F08201108DD00864FBD /* RightSideLinkageHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RightSideLinkageHeaderView.h; sourceTree = "<group>"; };
 		876A3F09201108DD00864FBD /* RightSideLinkageHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RightSideLinkageHeaderView.m; sourceTree = "<group>"; };
-		87D014E120171E66003F2967 /* UIFont+Fonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Fonts.h"; sourceTree = "<group>"; };
-		87D014E220171E66003F2967 /* UIFont+Fonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Fonts.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,8 +170,6 @@
 				8728AE1C200C98DF00B7ABCA /* CellHeaderFooterDataAdapter.m */,
 				8728AE1E200EECE100B7ABCA /* CustomHeaderFooterView.h */,
 				8728AE1F200EECE100B7ABCA /* CustomHeaderFooterView.m */,
-				87D014E120171E66003F2967 /* UIFont+Fonts.h */,
-				87D014E220171E66003F2967 /* UIFont+Fonts.m */,
 				8745D5E920072B9300090417 /* TwoLevelLinkageView */,
 				8745D5E520072A3500090417 /* TwoLevelLinkage */,
 				8745D5B52007287100090417 /* Main.storyboard */,
@@ -456,7 +451,6 @@
 				8728AE1D200C98DF00B7ABCA /* CellHeaderFooterDataAdapter.m in Sources */,
 				876A3EFB200FA58E00864FBD /* CategoryModel.m in Sources */,
 				8745D5E820072A7500090417 /* TwoLevelLinkageView.m in Sources */,
-				87D014E320171E66003F2967 /* UIFont+Fonts.m in Sources */,
 				8745D5B42007287100090417 /* ViewController.m in Sources */,
 				876A3F0A201108DD00864FBD /* RightSideLinkageHeaderView.m in Sources */,
 				876A3F042010ED1A00864FBD /* LeftSideLinkageCell.m in Sources */,

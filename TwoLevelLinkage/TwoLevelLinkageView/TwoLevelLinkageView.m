@@ -20,6 +20,12 @@
 
 @property (nonatomic, assign) CGFloat leftSideWidth;
 
+@property (nonatomic, assign) NSInteger leftTableViewCurrentSelectedCellIndex;
+
+/**
+ 判断是否点击的左侧cell，防止右侧非手动滑动时影响左侧
+ */
+@property (nonatomic, assign) BOOL isSelectedLeft;
 @end
 
 @implementation TwoLevelLinkageView
@@ -46,6 +52,7 @@
     _leftSideTableView.dataSource = self;
     _leftSideTableView.showsVerticalScrollIndicator  = NO;
     _leftSideTableView.separatorStyle                = UITableViewCellSeparatorStyleNone;
+    _leftSideTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     
     [self addSubview:_leftSideTableView];
     
@@ -55,13 +62,16 @@
     _rightSideTableView.dataSource = self;
     _rightSideTableView.showsVerticalScrollIndicator  = NO;
     _rightSideTableView.separatorStyle                = UITableViewCellSeparatorStyleNone;
-    
+    _rightSideTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+
     [self addSubview:_rightSideTableView];
     
     _leftLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1.5, 100)];
     _leftLineView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.8];
     [self addSubview:_leftLineView];
 }
+
+#pragma mark - public method
 
 - (void)registCellWithLeftTableView:(void (^)(UITableView *leftSideTableView))leftSideTableViewBlock cellAndHeaderWithRightTableView:(void (^)(UITableView *rightSideTableView))rightSideTableViewBlock {
     
@@ -76,12 +86,23 @@
     }
 }
 
-- (void)registCellWithTableViews:(void (^)(UITableView *leftSideTableView, UITableView *rightSideTableView))tableViewBlock {
+- (void)registCellWithTableViews:(RegistCellWithTableViewBlock)tableViewBlock {
     
     if (tableViewBlock) {
         
         tableViewBlock (_leftSideTableView, _rightSideTableView);
     }
+}
+
+- (void)leftTableViewCellMakeSelectedAtRow:(NSInteger)row {
+    
+    TwoLevelLinkageCell *cell = [_leftSideTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
+    
+    // ----- cell更新选择状态
+    [cell updateToSelectedStateAnimated:YES];
+    
+    // ----- 更新当前所选cell
+    self.leftTableViewCurrentSelectedCellIndex = row;
 }
 
 - (void)reloadData {
@@ -173,7 +194,76 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if ([tableView isEqual:_leftSideTableView]) {
+        
+        NSInteger newSelectIndex = indexPath.row;
+        
+        // ----- 点击之后，更新旧的和新的cell的选中状态
+        [self updateSelectedIndexValueWithOldIndex:_leftTableViewCurrentSelectedCellIndex newIndex:newSelectIndex];
+        
+        [_leftSideTableView scrollToRowAtIndexPath:indexPath
+                                  atScrollPosition:UITableViewScrollPositionMiddle
+                                          animated:YES];
+        [_rightSideTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:newSelectIndex]
+                                   atScrollPosition:UITableViewScrollPositionTop
+                                           animated:YES];
+        
+        self.isSelectedLeft = YES;
+    } else {
+        
+        
+    }
+}
+
+#pragma mark - ScrollView Delegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    if ([scrollView isEqual:_rightSideTableView] && _isSelectedLeft == NO) {
+        
+        NSIndexPath *indexPath = [_rightSideTableView indexPathForCell:_rightSideTableView.visibleCells.firstObject];
+        NSInteger section      = indexPath.section;
+        
+        if (_leftTableViewCurrentSelectedCellIndex != section) {
+
+            NSInteger newLeftSelectIndex = section;
+            [self updateSelectedIndexValueWithOldIndex:_leftTableViewCurrentSelectedCellIndex newIndex:newLeftSelectIndex];
+
+            [_leftSideTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:section inSection:0]
+                                      atScrollPosition:UITableViewScrollPositionMiddle
+                                              animated:YES];
+        }
+    }
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    
+    self.isSelectedLeft = NO;
+}
+
+
 #pragma mark - ---- Whtiin The Method ----
+
+- (void)updateSelectedIndexValueWithOldIndex:(NSInteger)oldIndex newIndex:(NSInteger)newIndex {
+    
+    self.leftModels[oldIndex].selected = NO;
+    self.leftModels[newIndex].selected = YES;
+    
+    [self updateLeftSideTableViewCellStateWithRow:oldIndex selectedState:NO];
+    [self updateLeftSideTableViewCellStateWithRow:newIndex selectedState:YES];
+    
+    _leftTableViewCurrentSelectedCellIndex = newIndex;
+}
+
+- (void)updateLeftSideTableViewCellStateWithRow:(NSInteger)row selectedState:(BOOL)selectedState {
+    
+    TwoLevelLinkageCell *cell = [_leftSideTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
+    
+    [cell updateSelectedState:selectedState animate:YES];
+}
+
+
 - (CellDataAdapter *)adapterWithTableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath{
     
     CellDataAdapter *adapter = nil;
@@ -199,7 +289,7 @@
     
     if ([tableView isEqual:_leftSideTableView]) {
         
-        data = self.leftModels[section];
+        data = self.leftModels[row];
         
     } else {
         

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "LeftLevelLinkageModel.h"
 
+typedef void(^RegistCellWithTableViewBlock)(UITableView *leftSideTableView, UITableView *rightSideTableView);
 
 @interface TwoLevelLinkageView : UIView
 
@@ -37,8 +38,18 @@
 
  @param tableViewBlock TableViewBlock description
  */
-- (void)registCellWithTableViews:(void (^)(UITableView *leftSideTableView, UITableView *rightSideTableView))tableViewBlock;
+- (void)registCellWithTableViews:(RegistCellWithTableViewBlock)tableViewBlock;
 
+/**
+ 刷新数据
+ */
 - (void)reloadData;
+
+/**
+ 初始化左侧tableView选中第几行
+
+ @param row row
+ */
+- (void)leftTableViewCellMakeSelectedAtRow:(NSInteger)row;
 
 @end

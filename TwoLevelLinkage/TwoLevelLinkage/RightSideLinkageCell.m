@@ -9,7 +9,6 @@
 #import "RightSideLinkageCell.h"
 #import "SubCategoryModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "UIFont+Fonts.h"
 
 @interface RightSideLinkageCell()
 
@@ -37,7 +36,7 @@
     [self.contentView addSubview:_iconImageView];
     
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 0, 150, 60)];
-    self.titleLabel.font =  [UIFont systemFontOfSize:18.f];
+    self.titleLabel.font =  [UIFont fontWithName:@"Avenir-Light" size:18.f];
     [self.contentView addSubview:_titleLabel];
 }
 
